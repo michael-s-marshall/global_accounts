@@ -51,7 +51,7 @@ a more accurate description would be to say that the form of
 financialisation actually differs in nature, and with consequences that
 are particularly acute for tenants.
 
-## Alternative approach - Longitudinal k-medoids clustering
+## Alternative approach - Longitudinal k-means clustering
 
 An alternative approach that utilises the strengths of the longitudinal
 regression, but is more congruent with the conceptualisation of
@@ -76,11 +76,10 @@ To understand the financialisation of the English housing association
 sector I apply and extend GCKM to housing association balance sheet data
 from 2017-2021. I extend GCKM by taking the random effects from two
 depednent variables - gearing and EBITDA MRI%, both with a two degree
-orthogonal polynomial for financial year - and also applying k-medoids
-as it less sensitive to the outliers that are present in the long-tailed
-EBITDA MRI% distribution. Nonetheless, four outlier organisations are
-removed due to their extreme EBITDA MRI%, which when included cause
-clusters to emerge made up of single organisations.
+orthogonal polynomial for financial year - and then applying k-means.
+The analysis is conducted on the dataset used for the EBITDA MRI %
+longitudinal regression, and therefore five outlier housing associations
+are removed.
 
 ## Data preparation
 
@@ -412,7 +411,7 @@ EBITDA MRI trajectories of clusters 1 and 4. The clusters include:
 
 Given that the addition of cluster 3 is the primary separation between
 each solution, and that cluster 3 is made up of only two cases, it makes
-intuitive sense than k=3 was the most frequent bootstrap NbClust
+intuitive sense that k=3 was the most frequent bootstrap NbClust
 solution, as these two cases would be ommitted from the resampling in a
 number of iterations. Therefore, there are merits to choosing either
 cluster solution. One of the benefits of choosing a four cluster
